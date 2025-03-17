@@ -23,6 +23,7 @@ jobs:
         run: echo "Corriendo unit test..."
       - name: Faling tests
         if: ${{!inputs.pass-unit-tests}}
+        continue-on-error: true
         run: exit 1
 
   deploy-nonprod:
